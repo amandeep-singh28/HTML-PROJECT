@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Club</title>
+    <script>
+        function submitForm() {
+            var form = document.getElementById("myForm");
+            if (form.checkValidity()) {
+                alert("Thank you, Data Received");
+                form.reset();
+            } else {
+                form.reportValidity();
+
+
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-image: url('Images/3.jpg');
+            height: 100vh;
+            background-repeat: no-repeat;
+            width: 100%;
+            background-size: cover;
+            background-position: top center;
+            color: white;
+            font-family: 'Baloo Bhaijaan 2', sans-serif;
+        }
+
+        .left {
+
+            display: inline-block;
+            position: absolute;
+            left: 34px;
+            top: 19px;
+
+        }
+
+        .left img {
+            width: 84px;
+            filter: invert(100%);
+            /*Changes image color from black to white and vice-versa*/
+        }
+
+        .left div {
+            text-align: center;
+
+        }
+
+        .mid {
+            display: block;
+            width: 45%;
+            margin: 19px auto;
+
+
+        }
+
+        .right {
+            position: absolute;
+            right: 34px;
+            top: 20px;
+            display: inline-block;
+
+        }
+
+        .navbar {
+            display: inline-block;
+            /*we have choosen inline block because in this we can adjust the width and height also*/
+
+        }
+
+        .navbar li {
+            display: inline-block;
+            font-size: 20px;
+        }
+
+        .navbar li a {
+            color: white;
+            text-decoration: none;
+            padding: 20px 9px;
+        }
+
+        .navbar li a:hover {
+            text-decoration: underline;
+            color: grey;
+        }
+
+        .btn {
+            margin: 0px 9px;
+            background-color: black;
+            color: white;
+            padding: 5px 10px;
+            border: 2px solid grey;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Baloo Bhaijaan 2', sans-serif;
+            text-decoration: none;
+
+        }
+
+        .btn:hover {
+            background-color: rgb(31, 30, 30);
+        }
+
+        .container {
+            border: 2px solid white;
+            margin: 91px 31px;
+            padding: 75px;
+            width: 30%;
+            border-radius: 24px;
+
+        }
+
+        .form-group input {
+            text-align: center;
+            display: block;
+            width: 463px;
+            padding: 2px;
+            border: 2px solid gray;
+            margin: 11px auto;
+            font-size: 21px;
+            border-radius: 8px;
+            font-family: 'Baloo Bhaijaan 2', sans-serif;
+
+        }
+
+        .container h1 {
+            text-align: center;
+        }
+
+        .container button {
+            text-align: center;
+            display: block;
+            width: 89%;
+            margin: 11px auto;
+            font-size: 19px;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.465);
+            width: 532px;
+            padding: 5px;
+            border-radius: 20px;
+        }
+
+        .form-group input:focus {
+            background-color: bisque;
+        }
+
+        #co {
+            color: yellowgreen;
+        }
+    </style>
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap" rel="stylesheet">
+
+<body>
+    <header class="header">
+        <div class="left"> <!--Left Box for Logo-->
+            <img src="Images/gym remove.png" alt="">
+            <div>Fitness Club</div>
+        </div>
+        <div class="mid"> <!--Mid Box for Navbar-->
+            <ul class="navbar">
+                <li><a href="#">Home</a></li>
+                <li><a href="about gym.html">About Our Gym</a> </li>
+                <li><a href="/BMICalculator.html" target="blank">BMI Calculator</a></li>
+                <li><a href="/fitness_planner.html" target="blank">Fitness Planner</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="right"> <!--Right box for buttons-->
+            <a href="tel:8092812966" class="btn">
+                Call Us Now
+            </a>
+
+            <a href="mailto:work@vishalkr.in" class="btn">
+                Email Us
+            </a>
+        </div>
+    </header>
+    <div class="container">
+        <h1 id="co">Join The Best Gym</h1>
+        <form id="myForm">
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your Age" required>
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your Gender" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your Locality" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your Email Id" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your Phone Number" required>
+            </div>
+            <label>
+                <input type="checkbox" name="terms" required>
+                I accept the <a href="#">Terms and Conditions</a>
+            </label>
+
+            <button class="btn" type="button" onclick="submitForm()">Submit</button>
+            <button type="reset" class="btn">Reset</button>
+
+        </form>
+
+    </div>
+</body>
+
+</html>

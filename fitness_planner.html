@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Planner</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            background-image: url('/Images/background.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            margin: 80px;
+            padding: 80px;
+            height: 100px;
+        }
+
+        #planner {
+            background-color: #fff;
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input {
+            width: calc(100% - 16px);
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #activities {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        #activities ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #activities li {
+            margin-bottom: 10px;
+            background-color: #ddd;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        #fit3 {
+            color: black;
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="planner">
+        <h2>Fitness Planner</h2>
+        <label for="activity_id">Activity:</label>
+        <input type="text" id="activity" placeholder="Enter activity" required>
+
+        <label for="duration">Duration (minutes):</label>
+        <input type="number" id="duration" placeholder="Enter duration" required>
+
+        <button onclick="add()">Add Activity</button> <br> <br>
+        <a id="fit3" href="Images/work.pdf" download="Fitness_Planner.pdf" target="blank">Workout Planner
+        </a>
+
+        <div id="activities">
+            <h3>Today's Activities</h3>
+            <ul id="activityList"></ul>
+        </div>
+    </div>
+
+    <script>
+        function add() {
+            var activity = document.getElementById("activity").value;
+            var duration = document.getElementById("duration").value;
+            if (activity === "" || duration === "") {
+                alert("Please enter both activity and duration.");
+                return;
+            }
+            var activityList = document.getElementById("activityList");
+            var listItem = document.createElement("li");
+            listItem.textContent = activity + " - " + duration + " minutes";
+            activityList.appendChild(listItem);
+            document.getElementById("activity").value = "";
+            document.getElementById("duration").value = "";
+        }
+    </script>
+
+</body>
+
+</html>
